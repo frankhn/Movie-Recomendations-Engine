@@ -21,7 +21,7 @@ features = ['keywords', 'cast', 'genres', 'director']
 for feature in features:
     df[feature] = df[feature].fillna('')
 
-# step3: Create a column in DF which combines all selected features
+# step3: Create a column in DF(Data Frame) which combines all selected features
 
 def combine_features(row):
     try:
@@ -39,7 +39,7 @@ count_matrix = cv.fit_transform(df['combined_features'])
 
 ##Step 5: Compute the cosine Similarity on the count_matrix
 cosine_sim = cosine_similarity(count_matrix)
-movie_user_likes = "Avatar"
+movie_user_likes = "Oblivion"
 
 ##Step:6 Get index of this movie from its title
 
