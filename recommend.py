@@ -30,7 +30,7 @@ def combine_features(row):
         print("Error: ", row)
 
 df['combined_features'] = df.apply(combine_features, axis=1)
-print(df['combined_features'].head())
+# print(df['combined_features'].head())
 
 ##Step 4: Create count matrix from this new combined column
 cv = CountVectorizer()
@@ -50,3 +50,10 @@ similar_movies = list(enumerate(cosine_sim[movie_index]))
 ##Step:7 Get list of similar movies in descending order of similarity score
 sorted_similar_movies = sorted(similar_movies, key=lambda x: x[1], reverse=True)
 
+##Step8: Print titles of first 50 movies
+i=0
+for element in sorted_similar_movies:
+    print(get_title_from_index(element[0]))
+    i = i + 1
+    if i > 50:
+        break
