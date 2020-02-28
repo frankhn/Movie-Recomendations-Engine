@@ -16,6 +16,9 @@ df = pd.read_csv("movie_dataset.csv")
 ## step2: Select Features
 features = ['keywords', 'cast', 'genres', 'director']
 
+for feature in features:
+    df[feature] = df[feature].fillna('')
+
 # step3: Create a column in DF which combines all selected features
 
 def combine_features(row):
